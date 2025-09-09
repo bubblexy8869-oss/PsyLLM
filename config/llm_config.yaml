@@ -1,0 +1,102 @@
+# 心语AI LLM配置文件
+# 支持多种配置方式：环境变量 > 配置文件 > 默认值
+
+# ======================================
+# LLM类型配置 (参考deer-flow模式)
+# ======================================
+llm_types:
+  basic:
+    model_name: "qwen-turbo"
+    temperature: 0.3
+    max_tokens: 1500
+    description: "基础对话模型"
+    
+  reasoning:
+    model_name: "qwen-max" 
+    temperature: 0.1
+    max_tokens: 2000
+    description: "推理分析模型"
+    
+  vision:
+    model_name: "qwen-vl-max"
+    temperature: 0.2
+    max_tokens: 1000
+    description: "视觉理解模型"
+    
+  embedding:
+    model_name: "text-embedding-v2"
+    description: "文本嵌入模型"
+
+# ======================================
+# Agent特定配置
+# ======================================
+agent_configs:
+  onboarding_model:
+    model_name: "qwen-turbo"
+    temperature: 0.6
+    max_tokens: 300
+    description: "接待Agent - 温暖友好"
+    prompt_template: "onboarding"
+    
+  planner_model:
+    model_name: "qwen-turbo"
+    temperature: 0.2
+    max_tokens: 500
+    description: "规划Agent - 分析性强"
+    prompt_template: "planning"
+    
+  assessor_model:
+    model_name: "qwen-turbo"
+    temperature: 0.1
+    max_tokens: 800
+    description: "评估Agent - 高精度评分"
+    prompt_template: "assessment"
+    
+  analyst_model:
+    # 分析师Agent不使用LLM，纯计算
+    enabled: false
+    description: "分析师Agent - 数学计算"
+    
+  reporter_model:
+    model_name: "qwen-turbo"
+    temperature: 0.7
+    max_tokens: 2000
+    description: "报告Agent - 创造性写作"
+    prompt_template: "reporting"
+
+# ======================================
+# 提供商配置
+# ======================================
+providers:
+  qwen:
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key_env: "QWEN_API_KEY"
+    models:
+      - "qwen-turbo"
+      - "qwen-max"
+      - "qwen-vl-max"
+      
+  openai:
+    base_url: "https://api.openai.com/v1"
+    api_key_env: "OPENAI_API_KEY"
+    models:
+      - "gpt-4o"
+      - "gpt-4o-mini"
+      - "gpt-3.5-turbo"
+      
+  local:
+    base_url: "http://localhost:11434"
+    api_key: "ollama"
+    models:
+      - "qwen2.5:7b"
+      - "qwen2.5:14b"
+      - "llama3.1:8b"
+
+# ======================================
+# 性能配置
+# ======================================
+performance:
+  cache_size: 100
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1

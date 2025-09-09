@@ -1,0 +1,60 @@
+plans:
+  - id: communication_intro_v1
+    applies_if: "dimension==communication && severity==high"
+    summary: "沟通修复两周入门"
+    steps:
+      - "每日10分钟无评判倾听：轮流说-复述-确认"
+      - "情绪刻度记录(1-10)并用'我讯息'表达：感受-需求-请求"
+      - "每周一次'小事对齐'：本周一件开心/困难/期待"
+    scripts:
+      coach: "我听到你说__，我理解你当时感到__，我需要__，你愿意__吗？"
+
+  - id: trust_microcommit_v1
+    applies_if: "dimension==trust && severity==mid"
+    summary: "信任修复微承诺7天"
+    steps:
+      - "透明窗：每天晚间10分钟互报3件小事"
+      - "可验证承诺：本周3次按约回复消息"
+      - "边界对话：定义'可接受/不可接受'列表"
+    scripts:
+      coach: "为了更信任彼此，我们先做一些小而确定的承诺，好吗？"
+
+  - id: intimacy_warmup_v1
+    applies_if: "dimension==intimacy && severity==mid"
+    summary: "亲密暖场一周计划"
+    steps:
+      - "非性亲密：每日一次30秒拥抱/眼神交流"
+      - "愿望清单：各写3个希望被关心的具体行为并交换"
+      - "性沟通：使用'喜欢/可以/不喜欢'清单讨论"
+    scripts:
+      coach: "我们先从非性的连接开始，给身体和情感一个缓冲。"
+
+  - id: conflict_deescalation_v1
+    applies_if: "dimension==conflict && severity==high"
+    summary: "冲突去激化急救包"
+    steps:
+      - "情绪>=7时暂停20分钟，约定恢复时间"
+      - "停止指责，使用具体行为+影响的描述"
+      - "复盘：诱因-升级点-更好做法"
+    scripts:
+      coach: "我现在情绪太高了，20分钟后再谈，这样我能更好地听你。"
+
+  - id: parenting_alignment_v1
+    applies_if: "dimension==parenting && severity==mid"
+    summary: "育儿观对齐三步走"
+    steps:
+      - "共同列出3条家庭一致规则"
+      - "每周一次父母对齐会（15分钟）"
+      - "分工表：谁在何时做什么，贴在可见处"
+    scripts:
+      coach: "我们先把最容易达成一致的三条规则写出来。"
+
+  - id: values_roles_household_v1
+    applies_if: "dimension==values_roles && severity==mid"
+    summary: "家务与角色再分配"
+    steps:
+      - "列出现有家务+耗时，标记'讨厌/喜欢/中性'"
+      - "采用'一主一辅'或'轮值'分配法"
+      - "两周后复盘体验与调整"
+    scripts:
+      coach: "我们按喜欢程度重新分配，效率和公平可以同时兼顾。"

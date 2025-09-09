@@ -1,0 +1,22 @@
+{
+    "dependencies": [
+      ".",
+      "aiofiles>=23.2.1",
+      "fastapi>=0.110",
+      "uvicorn>=0.29",
+      "pydantic>=2",
+      "sqlalchemy>=2",
+      "psycopg2-binary>=2.9",
+      "langgraph>=0.2",
+      "langsmith>=0.1",
+      "httpx>=0.27",
+      "jinja2>=3.1",
+      "langchain-openai>=0.1.0"
+    ],
+    "graphs": {
+      "assessment": "src.graph.builder:assessment_graph",
+      "interactive_chat": "src.graph.interactive_builder:interactive_graph"
+    },
+    "env": ".env",
+    "python_version": "3.11"
+  }

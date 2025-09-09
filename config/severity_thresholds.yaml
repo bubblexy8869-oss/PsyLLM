@@ -1,0 +1,17 @@
+
+# 严重性阈值（左闭右开）：
+#   score < severe      -> 严重
+#   severe <= score < moderate -> 中度
+#   score >= moderate   -> 良好
+thresholds:
+  severe: 2.5
+  moderate: 3.5
+
+# 维度权重（可选）。不写则默认各维度=1.0
+# dim_weights:
+#   communication: 1.0
+#   trust: 1.0
+#   intimacy: 1.0
+#   parenting: 1.0
+#   conflict: 1.0
+#   values_roles: 1.0
